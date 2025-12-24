@@ -1,6 +1,130 @@
 ---
 description: We are setup.md, a Minecraft administration wiki built by the community.
-slug: docs
+slug: docsTikTokClone/
+├─ backend/
+│   ├─ config/
+│   │   ├─ db.js
+│   │   ├─ env.js
+│   │   ├─ logger.js
+│   │   └─ index.js
+│   ├─ controllers/
+│   │   ├─ authController.js
+│   │   ├─ userController.js
+│   │   ├─ videoController.js         (حذف/حظر تلقائي عند البلاغات)
+│   │   ├─ commentController.js
+│   │   ├─ reportController.js
+│   │   └─ analyticsController.js
+│   ├─ middlewares/
+│   │   ├─ authMiddleware.js
+│   │   ├─ roleMiddleware.js
+│   │   ├─ errorHandler.js
+│   │   ├─ uploadMiddleware.js       (حماية إضافية للملفات الكبيرة)
+│   │   └─ rateLimiter.js            (تمت الإضافة)
+│   ├─ models/
+│   │   ├─ User.js                   (coins, engagementScore, mlScore, privacySettings, blockList)
+│   │   ├─ Video.js                  (engagementScore, mlScore, location, duration, resolution, thumbnail)
+│   │   ├─ Comment.js
+│   │   ├─ Report.js
+│   │   └─ Analytics.js
+│   ├─ routes/
+│   │   ├─ authRoutes.js
+│   │   ├─ userRoutes.js
+│   │   ├─ videoRoutes.js
+│   │   ├─ commentRoutes.js
+│   │   ├─ reportRoutes.js
+│   │   ├─ analyticsRoutes.js
+│   │   └─ webhookRoutes.js           (لشركات خارجية / الدفع / الفيديو)
+│   ├─ services/
+│   │   ├─ userService.js
+│   │   ├─ videoService.js
+│   │   ├─ commentService.js
+│   │   ├─ reportService.js
+│   │   ├─ analyticsService.js
+│   │   └─ recommendationEngine.js   (التنوع الثقافي + Shuffle/Entropy)
+│   │   └─ transcodingService.js     (تحويل الفيديو 480p/720p/1080p)
+│   ├─ sockets/
+│   │   ├─ index.js                  (Live feed updates)
+│   │   ├─ chatSocket.js
+│   │   └─ notificationSocket.js
+│   ├─ utils/
+│   │   ├─ validator.js
+│   │   ├─ helper.js
+│   │   └─ apiResponse.js
+│   ├─ server.js
+│   ├─ .env
+│   ├─ package.json
+│   └─ package-lock.json
+├─ frontend/
+│   ├─ app/
+│   │   ├─ tabs/
+│   │   │   ├─ Feed.tsx               (Duet/Stitch, Live updates, Video Preloader)
+│   │   │   ├─ Profile.tsx            (Verification, Coins, Shuffle/Reset)
+│   │   │   ├─ Search.tsx
+│   │   │   └─ Notifications.tsx
+│   │   ├─ components/
+│   │   │   ├─ VideoCard.tsx
+│   │   │   ├─ CommentCard.tsx
+│   │   │   ├─ LikeButton.tsx
+│   │   │   ├─ ShareButton.tsx
+│   │   │   ├─ FollowButton.tsx
+│   │   │   ├─ StoryCard.tsx
+│   │   │   └─ CoinsBadge.tsx
+│   │   └─ navigation/
+│   │       ├─ AppNavigator.tsx
+│   │       └─ StackNavigator.tsx
+│   ├─ assets/
+│   │   ├─ icons/
+│   │   │   ├─ like.png
+│   │   │   ├─ share.png
+│   │   │   └─ follow.png
+│   │   ├─ images/
+│   │   │   ├─ logo.png
+│   │   │   ├─ placeholder.jpg
+│   │   │   └─ stories/
+│   │   │       ├─ story1.jpg
+│   │   │       ├─ story2.jpg
+│   │   │       └─ story3.jpg
+│   │   └─ sounds/
+│   │       └─ trending/
+│   │           ├─ sound1.mp3
+│   │           ├─ sound2.mp3
+│   │           └─ sound3.mp3
+│   ├─ screens/
+│   │   ├─ CommentsScreen.tsx
+│   │   ├─ UploadVideoScreen.tsx
+│   │   ├─ StoriesScreen.tsx
+│   │   ├─ MusicScreen.tsx
+│   │   ├─ SearchScreen.tsx
+│   │   ├─ ProfileScreen.tsx
+│   │   └─ FeedScreen.tsx
+│   ├─ node_modules/
+│   ├─ package.json
+│   ├─ package-lock.json
+│   └─ README.md
+├─ admin-panel/
+│   ├─ components/
+│   │   ├─ Sidebar.js
+│   │   ├─ Table.js
+│   │   ├─ Chart.js
+│   │   ├─ ActivityLog.js             (Realtime + Logs)
+│   │   └─ RoleSelector.js            (Permissions دقيقة)
+│   ├─ pages/
+│   │   ├─ Dashboard.js
+│   │   ├─ Users.js
+│   │   ├─ Videos.js
+│   │   ├─ Reports.js
+│   │   └─ Roles.js
+│   ├─ services/
+│   │   ├─ adminService.js
+│   │   └─ analyticsService.js
+│   ├─ styles/
+│   │   └─ admin.css
+│   └─ package.json
+├─ docs/
+│   ├─ setup.md
+│   ├─ architecture.md
+│   └─ api-documentation.md
+└─ README.md
 title: Getting Started
 lastUpdated: 2025-08-28
 sidebar:
